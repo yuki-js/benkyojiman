@@ -4,7 +4,7 @@
   "start_url": "./?utm_source=web_app_manifest",
   "display": "standalone",
   "icons": [{
-    "src": "dist/res/icons/512.png",
+    "src": "dist/res/icon/512.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
