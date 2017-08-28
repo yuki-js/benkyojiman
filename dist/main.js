@@ -31,6 +31,9 @@ const Home = {
     },
     register(){
       this.pageStack.push(Register)
+    },
+    goToAbout(){
+      this.pageStack.push(About)
     }
   },
   components:{customBar},
@@ -133,6 +136,10 @@ const AddTest = {
   },
   methods:{
     submit(){
+      if(this.addingSub){
+        this.$ons.notification.toast("追加ボタンを一回押してください。")
+        return 
+      }
       this.loading=true
 
       network.encryptedFetch("/test",{
@@ -486,7 +493,11 @@ const Register = {
     
   }
 }
-
+const About ={
+  template:"#about",
+  props:["pageStack"],
+  components:{customBar},
+}
 
 Vue.use(VueOnsen)
 new Vue({
@@ -512,10 +523,15 @@ new Vue({
       
   }
 })
+window.addEventListener('load', function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('dist/res/serviceWorker.js');
+  }
+});
 
 },{"./network":2,"cryptico":56,"js-base64":105}],2:[function(require,module,exports){
 const b64 = require("js-base64").Base64
-let prefix="http://勉強.ga:40298/api"
+let prefix="https://勉強.ga:40298/api"
 if(localStorage.defaultServer){
   prefix=localStorage.defaultServer;
 }

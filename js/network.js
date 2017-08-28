@@ -1,5 +1,5 @@
 const b64 = require("js-base64").Base64
-let prefix="http://勉強.ga:40298/api"
+let prefix="https://勉強.ga:40298/api"
 if(localStorage.defaultServer){
   prefix=localStorage.defaultServer;
 }

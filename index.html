@@ -5,7 +5,7 @@
     <title>勉強自慢</title>
     
     <link rel="stylesheet" href="dist/normalize.min.js">
-
+    <link rel="manifest" href="manifest.json">
     <link rel='stylesheet' href='dist/onsenui/css/onsenui.min.css'>
     <link rel='stylesheet' href='dist/onsenui/css/onsen-css-components.min.css'>
     <link rel="stylesheet" href="dist/style.css">
@@ -24,10 +24,12 @@
       <v-ons-page data-page="home">
         <custom-bar title="Home"></custom-bar>
         <div>
-          <v-ons-button modifier="red" @click="jiman">自慢！</v-ons-button>
+          <v-ons-button modifier="red" @click="jiman"></v-ons-button>
           <v-ons-button @click="backnumber" modifier="normal">バックナンバー</v-ons-button>
           <v-ons-button @click="register" modifier="normal">登録情報</v-ons-button>
           <v-ons-button @click="addTest" modifier="normal">テスト追加</v-ons-button>
+          <v-ons-button @click="goToAbout" modifier="normal">このアプリについて
+          </v-ons-button>
         </div>
       </v-ons-page>
     </template>
@@ -190,7 +192,20 @@
         </div>
       </v-ons-toolbar>
     </template>
-    
+    <template id="about">
+      <v-ons-page data-page="about">
+        <custom-bar title="このアプリは"></custom-bar>
+        <div>
+          <h1>勉強自慢</h1>
+          <p>勉強を自慢するためのアプリです♡
+            自慢のロゴはhttps://github.com/Rare25/5000choyenからお借りしました。ありがとうございます。
+            寄付ください<br>
+            Monacoin:MKSunF7Lw6Dwn1YVWKoGjD7gLXQzYWVtRP<br>
+            Bitcoin:<a href="bitcoin:1Ev6sBCioY5q6ddZGTDoSRAM6GjyDu77Mc">1Ev6sBCioY5q6ddZGTDoSRAM6GjyDu77Mc</a>
+          </p>
+        </div>
+      </v-ons-page>
+    </template>
     <script src="cordova.js"></script>
     <script src="dist/vue.min.js"></script>
     <script src='dist/onsenui/js/onsenui.min.js'></script>

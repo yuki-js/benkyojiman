@@ -30,6 +30,9 @@ const Home = {
     },
     register(){
       this.pageStack.push(Register)
+    },
+    goToAbout(){
+      this.pageStack.push(About)
     }
   },
   components:{customBar},
@@ -132,6 +135,10 @@ const AddTest = {
   },
   methods:{
     submit(){
+      if(this.addingSub){
+        this.$ons.notification.toast("追加ボタンを一回押してください。")
+        return 
+      }
       this.loading=true
 
       network.encryptedFetch("/test",{
@@ -485,7 +492,11 @@ const Register = {
     
   }
 }
-
+const About ={
+  template:"#about",
+  props:["pageStack"],
+  components:{customBar},
+}
 
 Vue.use(VueOnsen)
 new Vue({
@@ -511,3 +522,8 @@ new Vue({
       
   }
 })
+window.addEventListener('load', function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('dist/res/serviceWorker.js');
+  }
+});

@@ -1,0 +1,17 @@
+{
+  "name": "勉強自慢",
+  "short_name": "勉強自慢",
+  "start_url": "./?utm_source=web_app_manifest",
+  "display": "standalone",
+  "icons": [{
+    "src": "dist/res/icons/512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "related_applications": [{
+    "platform": "web"
+  }],
+  "background_color": "white",
+  "scope":"/",
+  "theme_color": "#881100"
+}

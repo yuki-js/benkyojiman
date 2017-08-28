@@ -14,7 +14,10 @@
 [data-page=home]{
     .button--red{
         background-color:#ff0000;
-       
+        background-image:url(res/jiman.png);
+        background-repeat:no-repeat;
+        background-position:center center;
+        
     }
     ons-button{
         display:block;
