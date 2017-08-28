@@ -1,0 +1,100 @@
+[data-page=tutorial] .carItm {
+  text-align: center; }
+  [data-page=tutorial] .carItm img {
+    max-width: 200px;
+    max-height: 200px; }
+  [data-page=tutorial] .carItm p {
+    text-align: left;
+    margin: 10%; }
+
+[data-page=tutorial] .carCtrl {
+  bottom: 0;
+  position: absolute;
+  margin: 20%;
+  width: 60%; }
+  [data-page=tutorial] .carCtrl ons-toolbar-button {
+    color: white; }
+  [data-page=tutorial] .carCtrl .left {
+    position: absolute;
+    left: 0; }
+  [data-page=tutorial] .carCtrl .right {
+    position: absolute;
+    right: 0; }
+
+[data-page="search"] ons-search-input {
+  width: 100%;
+  height: 100%; }
+  [data-page="search"] ons-search-input input {
+    height: 100%; }
+
+[data-page="search"] .suggestList ons-list {
+  position: fixed;
+  width: 100%; }
+
+[data-page="contentInfo"] .contentContainer {
+  padding: 10px;
+  font-size: 15px; }
+
+[data-page="contentInfo"] .name {
+  font-size: 1.2em;
+  margin: 10px; }
+
+[data-page="contentInfo"] .shortDescription {
+  padding: 0 10px;
+  color: #454545;
+  font-size: 0.9em; }
+
+[data-page="contentInfo"] .description {
+  padding: 0 10px; }
+
+[data-page="contentInfo"] .showMore, [data-page="contentInfo"] .showLess {
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+  padding: 5px; }
+
+[data-page="contentInfo"] .tags .tagItem {
+  background: white;
+  color: black;
+  border: 1px solid #ddd;
+  padding: 7px;
+  margin: 5px;
+  display: inline-block;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.4); }
+  [data-page="contentInfo"] .tags .tagItem.locked {
+    background: #fff176;
+    border: none; }
+  [data-page="contentInfo"] .tags .tagItem:active {
+    background: #ddd; }
+
+[data-page="contentInfo"] .actionBtn {
+  text-align: right;
+  padding: 10px; }
+
+[data-page="first"] .btns {
+  margin: 10px; }
+  [data-page="first"] .btns ons-button {
+    margin: 10px 0; }
+
+[data-page="generateKey"] .touchArea {
+  height: 50%;
+  background: #889464;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  padding: 30% 10%; }
+
+[data-page="userProfile"] .contentContainer {
+  padding: 10px;
+  font-size: 15px; }
+
+[data-page="userProfile"] .name {
+  font-size: 1.2em;
+  margin: 10px; }
+
+[data-page="userProfile"] .description {
+  padding: 0 10px; }
+
+[data-page=viewer] iframe {
+  width: 100%;
+  height: 99%; }
