@@ -15,14 +15,18 @@
     .button--red{
         background-color:#ff0000;
         background-image:url(res/jiman.png);
+        background-position:center;
+        background-size:contain;
         background-repeat:no-repeat;
-        background-position:center center;
-        
+        padding:40px;
     }
     ons-button{
         display:block;
         margin:20px;
-        padding:60px;
+        padding:40px;
+    }
+    .button--small{
+        padding:10px;
     }
     text-align:center;
 }

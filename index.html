@@ -22,13 +22,17 @@
 
     <template id="home">
       <v-ons-page data-page="home">
-        <custom-bar title="Home"></custom-bar>
+        <custom-bar title="Home">
+          <v-ons-toolbar-button @click="notification">
+            <v-ons-icon icon="ion-ios-bell"></v-ons-icon>
+          </v-ons-toolbar-button>
+        </custom-bar>
         <div>
           <v-ons-button modifier="red" @click="jiman"></v-ons-button>
           <v-ons-button @click="backnumber" modifier="normal">バックナンバー</v-ons-button>
-          <v-ons-button @click="register" modifier="normal">登録情報</v-ons-button>
           <v-ons-button @click="addTest" modifier="normal">テスト追加</v-ons-button>
-          <v-ons-button @click="goToAbout" modifier="normal">このアプリについて
+          <v-ons-button @click="register" modifier="small">登録情報</v-ons-button>
+          <v-ons-button @click="goToAbout" modifier="small">このアプリについて
           </v-ons-button>
         </div>
       </v-ons-page>
@@ -88,6 +92,7 @@
           <v-ons-input placeholder="名前" v-model="name"></v-ons-input>
           <v-ons-input placeholder="学校コード" v-model="school"></v-ons-input>
           <v-ons-button modifier="" @click="register">登録</v-ons-button>
+          学校コードとは、学校を識別するための数字である。大学入試センターが発行する高校コードを指定することが望ましいが、整数ならば参加者同士で予め決めておけばなんでも良い。
         </div>
       </v-ons-page>
     </template>
@@ -181,6 +186,18 @@
         </div>
       </v-ons-page>
     </template>
+    <template id="notification">
+      <v-ons-page data-page="notification">
+        <custom-bar title="通知"></custom-bar>
+        <div>
+          <v-ons-card>
+            <div class="title">Information</div>
+            <div class="description">この画面は通知画面です。最高得点を獲得したり、新しいテストが開始されたら通知が表示されます。</div>
+          </v-ons-card>
+        </div>
+      </v-ons-page>
+    </template>
+    
     <template id="customBar">
       <v-ons-toolbar>
         <div class="left">
@@ -188,7 +205,7 @@
         </div>
         <div class="center">{{title}}</div>
         <div class="right">
-
+          <slot></slot>
         </div>
       </v-ons-toolbar>
     </template>
@@ -198,7 +215,7 @@
         <div>
           <h1>勉強自慢</h1>
           <p>勉強を自慢するためのアプリです♡
-            自慢のロゴはhttps://github.com/Rare25/5000choyenからお借りしました。ありがとうございます。
+            自慢のロゴはhttps://github.com/Rare25/5000choyenからお借りしました。ありがとうございます。<br>
             寄付ください<br>
             Monacoin:MKSunF7Lw6Dwn1YVWKoGjD7gLXQzYWVtRP<br>
             Bitcoin:<a href="bitcoin:1Ev6sBCioY5q6ddZGTDoSRAM6GjyDu77Mc">1Ev6sBCioY5q6ddZGTDoSRAM6GjyDu77Mc</a>

@@ -14,12 +14,16 @@
   [data-page=home] .button--red {
     background-color: #ff0000;
     background-image: url(res/jiman.png);
+    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center center; }
+    padding: 40px; }
   [data-page=home] ons-button {
     display: block;
     margin: 20px;
-    padding: 60px; }
+    padding: 40px; }
+  [data-page=home] .button--small {
+    padding: 10px; }
 
 [data-page="first"] .btns {
   margin: 10px; }

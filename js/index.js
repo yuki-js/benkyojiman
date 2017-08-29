@@ -33,6 +33,9 @@ const Home = {
     },
     goToAbout(){
       this.pageStack.push(About)
+    },
+    notification(){
+      this.pageStack.push(Notification)
     }
   },
   components:{customBar},
@@ -472,6 +475,7 @@ const Register = {
   },
   methods:{
     register(){
+      this.school=this.school|0;
       if(!this.name||!this.school){
         return this.$ons.notification.toast("入力してください",{timeout:2000})
       }
@@ -493,11 +497,17 @@ const Register = {
     
   }
 }
+const Notification ={
+  template:"#notification",
+  props:["pageStack"],
+  components:{customBar},
+}
 const About ={
   template:"#about",
   props:["pageStack"],
   components:{customBar},
 }
+
 
 Vue.use(VueOnsen)
 new Vue({
