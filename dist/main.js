@@ -534,7 +534,7 @@ window.addEventListener('load', function() {
 const b64 = require("js-base64").Base64
 let prefix="https://勉強.ga:40298/api"
 if(localStorage.defaultServer){
-  prefix=localStorage.defaultServer;
+  prefix=localStorage.benkyoJimandefaultServer;//not to conflict
 }
 const cryptico =require("cryptico")
 
