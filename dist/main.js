@@ -52,7 +52,8 @@ const Home = {
         body:JSON.stringify(cryptico.encrypt(aesKey.map(v=>("0"+v.toString(16)).slice(-2)).join(""),pubKey,key)),
         headers:new Headers({
           "Content-Type": "application/json"
-        })
+        }),
+        mode:"cors"
       })).then((cph)=>{
         const jn=JSON.parse(b64.decode(cryptico.decryptAESCBC(cph.cipher,aesKey)))
         if(jn.success&&myPubKey==jn.pubKey){
@@ -552,7 +553,8 @@ exports.encryptedFetch=(url,bodyJsObj,aesKey,myKey)=>{
     headers:new Headers({
       "X-Publickey":myKey,
       "Content-Type":"application/x-aes-encrypted"
-    })
+    }),
+    mode:"cors"
   }).then(res=>{
     if(!res.ok){
       throw new Error()

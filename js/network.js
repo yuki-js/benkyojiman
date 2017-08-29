@@ -20,7 +20,8 @@ exports.encryptedFetch=(url,bodyJsObj,aesKey,myKey)=>{
     headers:new Headers({
       "X-Publickey":myKey,
       "Content-Type":"application/x-aes-encrypted"
-    })
+    }),
+    mode:"cors"
   }).then(res=>{
     if(!res.ok){
       throw new Error()

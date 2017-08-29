@@ -51,7 +51,8 @@ const Home = {
         body:JSON.stringify(cryptico.encrypt(aesKey.map(v=>("0"+v.toString(16)).slice(-2)).join(""),pubKey,key)),
         headers:new Headers({
           "Content-Type": "application/json"
-        })
+        }),
+        mode:"cors"
       })).then((cph)=>{
         const jn=JSON.parse(b64.decode(cryptico.decryptAESCBC(cph.cipher,aesKey)))
         if(jn.success&&myPubKey==jn.pubKey){
