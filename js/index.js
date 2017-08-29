@@ -86,7 +86,7 @@ const JimanForm = {
   },
   methods:{
     getTests(){
-      network.fetchWrap("/test/"+school+"?now="+Date.now()).then((rows)=>{
+      network.fetchWrap("/test/"+school+"?now="+((Date.now()/1000000)|0)).then((rows)=>{
         this.result=rows.map(v=>{ return {testName:v.testName,subjects:v.subjects.split(",")} })
         this.testName=this.result[0].testName
       })
@@ -146,7 +146,7 @@ const AddTest = {
       this.loading=true
 
       network.encryptedFetch("/test",{
-        deadline:Date.now()+this.deadline*24*60*60*1000,
+        deadline:(Date.now()/1000000+this.deadline*24*6*6/10|0),
         testName:this.testName,
         subjects:this.subjects.join(",")        
       },aesKey,myPubKey).then(d=>{
